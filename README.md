@@ -24,13 +24,19 @@ This project addresses both by engineering microstructural and cross-asset featu
 ## Technology Used
 
 Layer	Tools & Libraries
-Data Processing	Python, pandas, Dask, pyarrow
-Feature Engineering	NumPy, pandas
-Modeling	scikit-learn, PyTorch, River (online learning), stable-baselines3
-Backtesting	Custom engine (Python), Zipline-style simulation
-Visualization	matplotlib, seaborn
-MLOps	Docker, MLflow, Prefect
-Testing & CI/CD	pytest, flake8, GitHub Actions
+Data Processing:	Python, pandas, Dask, pyarrow
+
+Feature Engineering:	NumPy, pandas
+
+Modeling: scikit-learn, PyTorch, River (online learning), stable-baselines3
+
+Backtesting	Custom engine: (Python), Zipline-style simulation
+
+Visualization: matplotlib, seaborn
+
+MLOps: Docker, MLflow, Prefect
+
+Testing & CI/CD: pytest, flake8, GitHub Actions
 
 ## Steps to Solution
 1. Data Ingestion
@@ -38,12 +44,14 @@ Testing & CI/CD	pytest, flake8, GitHub Actions
   - Load raw CSV snapshots from data/raw/limit-orderbook/.
 
   - Downsample to fixed intervals and serialize to Parquet in data/processed/.
+    
 
 2. Feature Engineering
 
   - Microstructural features: depth-weighted imbalance, queue dynamics, iceberg detection.
 
   - Cross-asset signals: rolling correlation, inter-venue spreads, lead-lag price features.
+    
 
 3. Model Training
 
@@ -56,6 +64,7 @@ Testing & CI/CD	pytest, flake8, GitHub Actions
   - Hybrid ensembles: combining tree-based and deep models.
 
   - Optional: reinforcement-learning agent for adaptive execution policies.
+    
 
 4. Backtesting & Execution Simulation
 
@@ -64,6 +73,7 @@ Testing & CI/CD	pytest, flake8, GitHub Actions
   - Benchmarks: TWAP, VWAP, POV, and implementation-shortfall minimization.
 
   - Multi-venue routing logic and transaction-cost analysis (TCA).
+    
 
 5. Evaluation & Visualization
 
@@ -72,12 +82,16 @@ Testing & CI/CD	pytest, flake8, GitHub Actions
   - Perform walk-forward cross-validation and stress-testing under crisis scenarios.
 
   - Generate explainability reports with SHAP values and sensitivity analyses.
+    
 
 ## Final Results
 Model	Prediction Accuracy	Slippage Improvement vs. TWAP
 Logistic Regression	| 55.2%	| 3.5 bps
+
 LSTM Sequence Model	| 60.8%	| 5.2 bps
+
 Transformer Model	| 62.1%	| 5.8 bps
+
 RL-Driven Execution Agent	| —	|7.1 bps
 
 These results demonstrate that richer features and advanced models can reliably predict micro-price moves and translate gains into measurable execution improvements.
