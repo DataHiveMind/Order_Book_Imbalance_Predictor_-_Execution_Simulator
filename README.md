@@ -5,7 +5,7 @@ This project builds a full pipeline to predict short-term price movements from l
 
 ## Contact Information
 For questions or collaboration: 
-Name: Kenneth (Project Maintainer) 
+Name: Kenneth (Future Quant Reseracher) 
 
 Email: kennethlegare5@gmail.com 
 
