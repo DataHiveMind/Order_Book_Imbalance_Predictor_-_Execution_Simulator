@@ -35,50 +35,50 @@ Testing & CI/CD	pytest, flake8, GitHub Actions
 ## Steps to Solution
 1. Data Ingestion
 
-- Load raw CSV snapshots from data/raw/limit-orderbook/.
+  - Load raw CSV snapshots from data/raw/limit-orderbook/.
 
-- Downsample to fixed intervals and serialize to Parquet in data/processed/.
+  - Downsample to fixed intervals and serialize to Parquet in data/processed/.
 
 2. Feature Engineering
 
-- Microstructural features: depth-weighted imbalance, queue dynamics, iceberg detection.
+  - Microstructural features: depth-weighted imbalance, queue dynamics, iceberg detection.
 
-- Cross-asset signals: rolling correlation, inter-venue spreads, lead-lag price features.
+  - Cross-asset signals: rolling correlation, inter-venue spreads, lead-lag price features.
 
 3. Model Training
 
-- Baseline: logistic regression on static features.
+  - Baseline: logistic regression on static features.
 
-- Sequence models: LSTM and Transformer architectures on time-series windows.
+  - Sequence models: LSTM and Transformer architectures on time-series windows.
 
-- Graph models: GNN capturing LOB as a connectivity graph.
+  - Graph models: GNN capturing LOB as a connectivity graph.
 
-- Hybrid ensembles: combining tree-based and deep models.
+  - Hybrid ensembles: combining tree-based and deep models.
 
-- Optional: reinforcement-learning agent for adaptive execution policies.
+  - Optional: reinforcement-learning agent for adaptive execution policies.
 
 4. Backtesting & Execution Simulation
 
-- Simulate child-order schedules using predictive signals.
+  - Simulate child-order schedules using predictive signals.
 
-- Benchmarks: TWAP, VWAP, POV, and implementation-shortfall minimization.
+  - Benchmarks: TWAP, VWAP, POV, and implementation-shortfall minimization.
 
-- Multi-venue routing logic and transaction-cost analysis (TCA).
+  - Multi-venue routing logic and transaction-cost analysis (TCA).
 
 5. Evaluation & Visualization
 
-- Compute slippage, PnL impact, and cost vs. benchmarks.
+  - Compute slippage, PnL impact, and cost vs. benchmarks.
 
-- Perform walk-forward cross-validation and stress-testing under crisis scenarios.
+  - Perform walk-forward cross-validation and stress-testing under crisis scenarios.
 
-- Generate explainability reports with SHAP values and sensitivity analyses.
+  - Generate explainability reports with SHAP values and sensitivity analyses.
 
 ## Final Results
 Model	Prediction Accuracy	Slippage Improvement vs. TWAP
-Logistic Regression	55.2%	3.5 bps
-LSTM Sequence Model	60.8%	5.2 bps
-Transformer Model	62.1%	5.8 bps
-RL-Driven Execution Agent	—	7.1 bps
+Logistic Regression	| 55.2%	| 3.5 bps
+LSTM Sequence Model	| 60.8%	| 5.2 bps
+Transformer Model	| 62.1%	| 5.8 bps
+RL-Driven Execution Agent	| —	|7.1 bps
 
 These results demonstrate that richer features and advanced models can reliably predict micro-price moves and translate gains into measurable execution improvements.
 
